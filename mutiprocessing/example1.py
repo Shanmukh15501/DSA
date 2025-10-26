@@ -1,8 +1,8 @@
 import multiprocessing
 import time
 
-def print_numbers():
-    for i in range(5):
+def print_numbers(n1,n2):
+    for i in range(n1+n2):
         time.sleep(1)
         print(i)
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     start_time = time.time()
 
     # Create processes
-    process1 = multiprocessing.Process(target=print_numbers, name="Process-1")
+    process1 = multiprocessing.Process(target=print_numbers, name="Process-1",args=(1,9))
     process2 = multiprocessing.Process(target=print_alphabets, name="Process-2")
 
     # Start processes
