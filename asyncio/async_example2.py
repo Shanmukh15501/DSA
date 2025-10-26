@@ -11,12 +11,15 @@ async def say_hello():
     return time.time() - start
 
 async def main():
+    start = time.time()
     results = await asyncio.gather(
         say_hello(),
         say_hello(),
         say_hello(),
     )
     print(f"Execution times: {results}")
+    print("Total Time",time.time() - start) 
+    
 
 if __name__ == '__main__':
     asyncio.run(main())
